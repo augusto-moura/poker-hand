@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/poker-hand.iml" filepath="$PROJECT_DIR$/.idea/modules/poker-hand.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/poker-hand_main.iml" filepath="$PROJECT_DIR$/.idea/modules/poker-hand_main.iml" group="poker-hand" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/poker-hand_test.iml" filepath="$PROJECT_DIR$/.idea/modules/poker-hand_test.iml" group="poker-hand" />
+    </modules>
+  </component>
+</project>
