@@ -16,20 +16,11 @@ class CombinacaoFullHouse extends Combinacao<CombinacaoFullHouse> {
 
 	@Override
 	int compararCom(CombinacaoFullHouse alvo) {
-		final int comparacaoCartaTrinca = comparaTrinca(alvo)
-		if (comparacaoCartaTrinca != 0) {
-			return comparacaoCartaTrinca
-		}
-
-		return comparaPar(alvo)
+		return comparaTrinca(alvo)
 	}
 
 	private int comparaTrinca(CombinacaoFullHouse alvo) {
 		return comparaValorGrupoComNCartas(QUANTIDADE_CARTAS_TRINCA, alvo)
-	}
-
-	private int comparaPar(CombinacaoFullHouse alvo) {
-		return comparaValorGrupoComNCartas(QUANTIDADE_CARTAS_PAR, alvo)
 	}
 
 	private int comparaValorGrupoComNCartas(int nCartas, CombinacaoFullHouse alvo) {

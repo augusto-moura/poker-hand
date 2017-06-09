@@ -42,5 +42,15 @@ class PokerHandSpec extends Specification {
 		"7C 8S 9H TH JH" | "TS TH TD JH JD" || Result.LOSS
 		"7C 8S 9H TH JH" | "JH JD TH TC 4C" || Result.WIN
 		"TS TH TD JH JD" | "JH JD TH TC 4C" || Result.WIN
+		"TS TH TD TC JD" | "JH JD JS JC 4C" || Result.LOSS
+		"TS TH TD QC JD" | "JH JD JS QC 4C" || Result.LOSS
+		"TS TH QD QC QS" | "KH KD JS JC JD" || Result.WIN
+		"TS TH QD QC QS" | "KH KD QS QC QD" || Result.WIN
+		"TS QS AS 2S 5S" | "8C KC 4C 2C JC" || Result.WIN
+		"5C 2C AS 2S 5S" | "8C KC 2H 2C 8D" || Result.LOSS
+		"AS KS QS JS TS" | "AC KC QC JC TC" || Result.WIN
+		"9S KS QS JS TS" | "9C KC QC JC TC" || Result.WIN
+		"2S 2C 4S 4D TS" | "3C 3D 4C 4H TC" || Result.LOSS
+		"3S 3H 4S 4D TS" | "3C 3D 4C 4H TC" || Result.LOSS
 	}
 }
