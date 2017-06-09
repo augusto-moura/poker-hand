@@ -32,13 +32,7 @@ class PokerHand {
 	}
 
 	Result compareWith(PokerHand outraMao) {
-		final Integer comparacaoMelhorCombinacao = melhorCombinacao <=> outraMao.melhorCombinacao
-
-		if (comparacaoMelhorCombinacao == 0) {
-			return maiorCarta <=> outraMao.maiorCarta
-		}
-
-		return comparacaoMelhorCombinacao < 0 ? Result.LOSS : Result.WIN
+		return melhorCombinacao.compararCom(outraMao.melhorCombinacao) < 0 ? Result.LOSS : Result.WIN
 	}
 
 }

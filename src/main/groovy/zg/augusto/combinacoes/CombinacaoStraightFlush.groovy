@@ -1,12 +1,11 @@
 package zg.augusto.combinacoes
 
 import zg.augusto.dominio.PokerHand
-import zg.augusto.dominio.ValorCarta
 
-class CombinacaoStraightFlush extends CombinacaoSequencia {
+class CombinacaoStraightFlush<T extends CombinacaoStraightFlush> extends CombinacaoSequencia<T> {
 
-	CombinacaoStraightFlush(PokerHand mao) {
-		super(mao)
+	CombinacaoStraightFlush(PokerHand mao, PossibilidadeCombinacoes tipo = PossibilidadeCombinacoes.STRAIGHT_FLUSH) {
+		super(mao, tipo)
 	}
 
 	@Override
@@ -15,7 +14,7 @@ class CombinacaoStraightFlush extends CombinacaoSequencia {
 		return super.temCombinacao() && combinacaoFlush.temCombinacao()
 	}
 
-	int compareTo(CombinacaoStraightFlush o) {
+	int compararCom(CombinacaoStraightFlush o) {
 		return o.mao.maiorCarta.naipe <=> mao.maiorCarta.naipe
 	}
 }

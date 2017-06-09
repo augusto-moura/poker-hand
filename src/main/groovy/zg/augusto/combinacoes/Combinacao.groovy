@@ -2,7 +2,7 @@ package zg.augusto.combinacoes
 
 import zg.augusto.dominio.PokerHand
 
-abstract class Combinacao implements Comparable<Combinacao> {
+abstract class Combinacao<T> {
 
 	protected static final Integer QUANTIDADE_CARTAS_PAR = 2
 	protected static final Integer QUANTIDADE_CARTAS_TRINCA = 3
@@ -18,11 +18,12 @@ abstract class Combinacao implements Comparable<Combinacao> {
 		this.tipo = tipo
 	}
 
-	@Override
-	int compareTo(Combinacao o) {
+	int compararCom(Combinacao o) {
 	 	return tipo <=> o.tipo
 	}
 
 	abstract Boolean temCombinacao()
+
+	abstract int compararCom(T alvo)
 
 }

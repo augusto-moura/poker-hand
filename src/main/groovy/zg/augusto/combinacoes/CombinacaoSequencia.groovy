@@ -3,10 +3,10 @@ package zg.augusto.combinacoes
 import zg.augusto.classificacoes.Sequencia
 import zg.augusto.dominio.PokerHand
 
-class CombinacaoSequencia extends Combinacao {
+class CombinacaoSequencia <T extends CombinacaoSequencia> extends Combinacao<T> {
 
-	CombinacaoSequencia(PokerHand mao) {
-		super(mao)
+	CombinacaoSequencia(PokerHand mao, PossibilidadeCombinacoes tipo = PossibilidadeCombinacoes.SEQUENCIA) {
+		super(mao, tipo)
 	}
 
 	@Override
@@ -14,7 +14,7 @@ class CombinacaoSequencia extends Combinacao {
 		return mao.grupos.any { it instanceof Sequencia && it.cartas.size() == QUANTIDADE_MAXIMA_CARTAS_NA_MAO }
 	}
 
-	int compareTo(CombinacaoSequencia o) {
+	int compararCom(CombinacaoSequencia o) {
 		return o.mao.maiorCarta.naipe <=> mao.maiorCarta.naipe
 	}
 }
