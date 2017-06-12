@@ -11,7 +11,7 @@ class CombinacaoPar extends Combinacao<CombinacaoPar> {
 	}
 
 	static Boolean temCombinacao(PokerHand mao) {
-		return mao.temGrupoComMesmoValor(QUANTIDADE_CARTAS_PAR)
+		return mao.grupos.findAll { it instanceof MesmoValor }.size() == 1 && mao.temGrupoComMesmoValor(QUANTIDADE_CARTAS_PAR)
 	}
 
 	@Override
