@@ -3,15 +3,14 @@ package zg.augusto.combinacoes
 import zg.augusto.dominio.PokerHand
 import zg.augusto.dominio.ValorCarta
 
-class CombinacaoRoyalStraightFlush extends CombinacaoStraightFlush<CombinacaoRoyalStraightFlush> {
+class CombinacaoRoyalStraightFlush extends Combinacao<CombinacaoRoyalStraightFlush> {
 
 	CombinacaoRoyalStraightFlush(PokerHand mao) {
 		super(mao, PossibilidadeCombinacoes.STRAIGHT_FLUSH)
 	}
 
-	@Override
-	Boolean temCombinacao() {
-		return super.temCombinacao() && mao.maiorCarta.valor == ValorCarta.AS
+	static Boolean temCombinacao(PokerHand mao) {
+		return CombinacaoStraightFlush.temCombinacao(mao) && mao.maiorCarta.valor == ValorCarta.AS
 	}
 
 	int compararCom(CombinacaoRoyalStraightFlush o) {

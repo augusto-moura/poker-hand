@@ -22,8 +22,6 @@ abstract class Combinacao<T> {
 	 	return tipo <=> o.tipo
 	}
 
-	abstract Boolean temCombinacao()
-
 	abstract int compararCom(T alvo)
 
 }

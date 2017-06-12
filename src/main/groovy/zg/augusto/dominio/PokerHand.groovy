@@ -15,20 +15,17 @@ class PokerHand {
 	final Combinacao melhorCombinacao
 
 	PokerHand(String maoStr) {
+		super()
 		this.cartas = Carta.fromString(maoStr).sort(false).reverse()
 		this.maiorCarta = cartas[0]
 		this.grupos = MesmoNaipe.fromCartas(cartas) + MesmoValor.fromCartas(cartas) + Sequencia.fromCartas(cartas)
-		this.melhorCombinacao = calcularMelhorCombinacao()
+		this.melhorCombinacao = CategorizadorJogadas.calcularMelhorJogada(this)
 	}
 
 	Boolean temGrupoComMesmoValor(Integer ocorrenciaMinima = 2) {
 		return grupos.any { Grupo it ->
 			return it instanceof MesmoValor && it.cartas.size() == ocorrenciaMinima
 		}
-	}
-
-	private Combinacao calcularMelhorCombinacao() {
-		return new CategorizadorJogadas(this).calcularMelhorJogada()
 	}
 
 	Result compareWith(PokerHand outraMao) {

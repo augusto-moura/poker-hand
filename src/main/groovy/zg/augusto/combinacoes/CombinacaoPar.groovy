@@ -10,8 +10,7 @@ class CombinacaoPar extends Combinacao<CombinacaoPar> {
 		super(mao, PossibilidadeCombinacoes.PAR)
 	}
 
-	@Override
-	Boolean temCombinacao() {
+	static Boolean temCombinacao(PokerHand mao) {
 		return mao.temGrupoComMesmoValor(QUANTIDADE_CARTAS_PAR)
 	}
 

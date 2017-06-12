@@ -8,8 +8,7 @@ class CombinacaoMaiorCarta extends Combinacao<CombinacaoMaiorCarta> {
 		super(mao, PossibilidadeCombinacoes.MAIOR_CARTA)
 	}
 
-	@Override
-	Boolean temCombinacao() {
+	static Boolean temCombinacao(PokerHand mao) {
 		return true
 	}
 

@@ -9,8 +9,7 @@ class CombinacaoFullHouse extends Combinacao<CombinacaoFullHouse> {
 		super(mao, PossibilidadeCombinacoes.FULL_HOUSE)
 	}
 
-	@Override
-	Boolean temCombinacao() {
+	static Boolean temCombinacao(PokerHand mao) {
 		return mao.temGrupoComMesmoValor(QUANTIDADE_CARTAS_PAR) && mao.temGrupoComMesmoValor(QUANTIDADE_CARTAS_TRINCA)
 	}
 
@@ -34,4 +33,5 @@ class CombinacaoFullHouse extends Combinacao<CombinacaoFullHouse> {
 
 		return trincaAtual.valor <=> trincaAlvo.valor
 	}
+
 }

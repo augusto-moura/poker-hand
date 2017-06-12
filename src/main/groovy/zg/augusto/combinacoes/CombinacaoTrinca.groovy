@@ -9,8 +9,7 @@ class CombinacaoTrinca extends Combinacao<CombinacaoTrinca> {
 		super(mao, PossibilidadeCombinacoes.TRINCA)
 	}
 
-	@Override
-	Boolean temCombinacao() {
+	static Boolean temCombinacao(PokerHand mao) {
 		return mao.temGrupoComMesmoValor(QUANTIDADE_CARTAS_TRINCA)
 	}
 
@@ -25,4 +24,5 @@ class CombinacaoTrinca extends Combinacao<CombinacaoTrinca> {
 
 		return trincaAtual.valor <=> trincaAlvo.valor
 	}
+
 }

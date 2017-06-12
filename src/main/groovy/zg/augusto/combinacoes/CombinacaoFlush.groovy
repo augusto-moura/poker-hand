@@ -10,8 +10,7 @@ class CombinacaoFlush extends Combinacao<CombinacaoFlush> {
 		super(mao, PossibilidadeCombinacoes.FLUSH)
 	}
 
-	@Override
-	Boolean temCombinacao() {
+	static Boolean temCombinacao(PokerHand mao) {
 		return mao.grupos.any { it instanceof MesmoNaipe && it.cartas.size() == QUANTIDADE_MAXIMA_CARTAS_NA_MAO }
 	}
 

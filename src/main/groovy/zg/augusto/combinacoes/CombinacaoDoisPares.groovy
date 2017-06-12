@@ -10,8 +10,7 @@ class CombinacaoDoisPares extends Combinacao<CombinacaoDoisPares> {
 		super(mao, PossibilidadeCombinacoes.DOIS_PARES)
 	}
 
-	@Override
-	Boolean temCombinacao() {
+	static Boolean temCombinacao(PokerHand mao) {
 		return mao.grupos.findAll {
 			return it instanceof MesmoValor && it.cartas.size() == QUANTIDADE_CARTAS_PAR
 		}.size() == QUANTIDADE_CARTAS_PAR

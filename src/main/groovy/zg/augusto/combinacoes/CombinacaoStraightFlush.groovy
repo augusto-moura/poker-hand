@@ -2,19 +2,18 @@ package zg.augusto.combinacoes
 
 import zg.augusto.dominio.PokerHand
 
-class CombinacaoStraightFlush<T extends CombinacaoStraightFlush> extends CombinacaoSequencia<T> {
+class CombinacaoStraightFlush extends Combinacao<CombinacaoStraightFlush> {
 
-	CombinacaoStraightFlush(PokerHand mao, PossibilidadeCombinacoes tipo = PossibilidadeCombinacoes.STRAIGHT_FLUSH) {
-		super(mao, tipo)
+	CombinacaoStraightFlush(PokerHand mao) {
+		super(mao, PossibilidadeCombinacoes.STRAIGHT_FLUSH)
 	}
 
-	@Override
-	Boolean temCombinacao() {
-		final CombinacaoFlush combinacaoFlush = new CombinacaoFlush(mao)
-		return super.temCombinacao() && combinacaoFlush.temCombinacao()
+	static Boolean temCombinacao(PokerHand mao) {
+		return CombinacaoSequencia.temCombinacao(mao) && CombinacaoFlush.temCombinacao(mao)
 	}
 
 	int compararCom(CombinacaoStraightFlush o) {
 		return o.mao.maiorCarta.naipe <=> mao.maiorCarta.naipe
 	}
+
 }

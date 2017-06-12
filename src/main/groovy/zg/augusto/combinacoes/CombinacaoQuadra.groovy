@@ -10,8 +10,7 @@ class CombinacaoQuadra extends Combinacao<CombinacaoQuadra> {
 		super(mao, PossibilidadeCombinacoes.QUADRA)
 	}
 
-	@Override
-	Boolean temCombinacao() {
+	static Boolean temCombinacao(PokerHand mao) {
 		return mao.temGrupoComMesmoValor(QUANTIDADE_CARTAS_QUADRA)
 	}
 
@@ -30,4 +29,5 @@ class CombinacaoQuadra extends Combinacao<CombinacaoQuadra> {
 
 		return kickerAtual <=> kickerAlvo
 	}
+
 }
