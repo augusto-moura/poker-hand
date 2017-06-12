@@ -4,7 +4,7 @@ import zg.augusto.classificacoes.MesmoValor
 import zg.augusto.dominio.Carta
 import zg.augusto.dominio.PokerHand
 
-class CombinacaoQuadra extends Combinacao<CombinacaoQuadra> {
+class CombinacaoQuadra extends Combinacao {
 
 	CombinacaoQuadra(PokerHand mao) {
 		super(mao, PossibilidadeCombinacoes.QUADRA)
@@ -14,7 +14,6 @@ class CombinacaoQuadra extends Combinacao<CombinacaoQuadra> {
 		return mao.temGrupoComMesmoValor(QUANTIDADE_CARTAS_QUADRA)
 	}
 
-	@Override
 	int compararCom(CombinacaoQuadra alvo) {
 		final MesmoValor quadraAtual = mao.grupos.find {it instanceof MesmoValor} as MesmoValor
 		final MesmoValor quadraAlvo = alvo.mao.grupos.find {it instanceof MesmoValor} as MesmoValor

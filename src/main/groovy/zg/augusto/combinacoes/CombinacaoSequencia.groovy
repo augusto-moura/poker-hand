@@ -3,7 +3,7 @@ package zg.augusto.combinacoes
 import zg.augusto.classificacoes.Sequencia
 import zg.augusto.dominio.PokerHand
 
-class CombinacaoSequencia extends Combinacao<CombinacaoSequencia> {
+class CombinacaoSequencia extends Combinacao {
 
 	CombinacaoSequencia(PokerHand mao) {
 		super(mao, PossibilidadeCombinacoes.SEQUENCIA)

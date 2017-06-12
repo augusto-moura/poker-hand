@@ -2,7 +2,7 @@ package zg.augusto.combinacoes
 
 import zg.augusto.dominio.PokerHand
 
-class CombinacaoMaiorCarta extends Combinacao<CombinacaoMaiorCarta> {
+class CombinacaoMaiorCarta extends Combinacao {
 
 	CombinacaoMaiorCarta(PokerHand mao) {
 		super(mao, PossibilidadeCombinacoes.MAIOR_CARTA)
@@ -12,9 +12,8 @@ class CombinacaoMaiorCarta extends Combinacao<CombinacaoMaiorCarta> {
 		return true
 	}
 
-	@Override
 	int compararCom(CombinacaoMaiorCarta alvo) {
-		return alvo.mao.maiorCarta.naipe <=> mao.maiorCarta.naipe
+		return mao.maiorCarta <=> alvo.mao.maiorCarta
 	}
 
 }

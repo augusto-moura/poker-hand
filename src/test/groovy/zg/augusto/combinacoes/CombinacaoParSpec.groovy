@@ -28,10 +28,10 @@ class CombinacaoParSpec extends Specification {
 	def "Quando comparado com outra combinação do tipo par, avaliar maior carta dos pares"() {
 		given:
 		final PokerHand maoFoo = new PokerHand(strMaoFoo)
-		final Combinacao combinacaoFoo = new CombinacaoFlush(maoFoo)
+		final Combinacao combinacaoFoo = new CombinacaoPar(maoFoo)
 
 		final PokerHand maoBar = new PokerHand(strMaoBar)
-		final Combinacao combinacaoBar = new CombinacaoFlush(maoBar)
+		final Combinacao combinacaoBar = new CombinacaoPar(maoBar)
 
 		expect:
 		combinacaoFoo.compararCom(combinacaoBar) == result
@@ -46,10 +46,10 @@ class CombinacaoParSpec extends Specification {
 	def "Quando comparado com outra combinação do tipo par e mesmo carta do par, avaliar maior fora dos pares não repetida"() {
 		given:
 		final PokerHand maoFoo = new PokerHand(strMaoFoo)
-		final Combinacao combinacaoFoo = new CombinacaoFlush(maoFoo)
+		final Combinacao combinacaoFoo = new CombinacaoPar(maoFoo)
 
 		final PokerHand maoBar = new PokerHand(strMaoBar)
-		final Combinacao combinacaoBar = new CombinacaoFlush(maoBar)
+		final Combinacao combinacaoBar = new CombinacaoPar(maoBar)
 
 		expect:
 		combinacaoFoo.compararCom(combinacaoBar) == result

@@ -2,7 +2,7 @@ package zg.augusto.combinacoes
 
 import zg.augusto.dominio.PokerHand
 
-class CombinacaoStraightFlush extends Combinacao<CombinacaoStraightFlush> {
+class CombinacaoStraightFlush extends Combinacao {
 
 	CombinacaoStraightFlush(PokerHand mao) {
 		super(mao, PossibilidadeCombinacoes.STRAIGHT_FLUSH)

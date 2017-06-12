@@ -2,26 +2,28 @@ package zg.augusto.gerenciador
 
 import zg.augusto.combinacoes.*
 import zg.augusto.dominio.PokerHand
-import zg.augusto.utils.Dupla
 
 class CategorizadorJogadas {
 
-	static private final List<Dupla<Closure<Boolean>, Class<Combinacao>>> COMBINACOES_POSSIVEIS = [
-		new Dupla<>(CombinacaoRoyalStraightFlush.&temCombinacao, CombinacaoRoyalStraightFlush),
-		new Dupla<>(CombinacaoStraightFlush.&temCombinacao, CombinacaoStraightFlush),
-		new Dupla<>(CombinacaoQuadra.&temCombinacao, CombinacaoQuadra),
-		new Dupla<>(CombinacaoFullHouse.&temCombinacao, CombinacaoFullHouse),
-		new Dupla<>(CombinacaoFlush.&temCombinacao, CombinacaoFlush),
-		new Dupla<>(CombinacaoSequencia.&temCombinacao, CombinacaoSequencia),
-		new Dupla<>(CombinacaoTrinca.&temCombinacao, CombinacaoTrinca),
-		new Dupla<>(CombinacaoDoisPares.&temCombinacao, CombinacaoDoisPares),
-		new Dupla<>(CombinacaoPar.&temCombinacao, CombinacaoPar),
+	static private final List<CombinacaoEntry> COMBINACOES_POSSIVEIS = [
+		new CombinacaoEntry(predicado: CombinacaoRoyalStraightFlush.&temCombinacao, classe: CombinacaoRoyalStraightFlush),
+		new CombinacaoEntry(predicado: CombinacaoStraightFlush.&temCombinacao, classe: CombinacaoStraightFlush),
+		new CombinacaoEntry(predicado: CombinacaoQuadra.&temCombinacao, classe: CombinacaoQuadra),
+		new CombinacaoEntry(predicado: CombinacaoFullHouse.&temCombinacao, classe: CombinacaoFullHouse),
+		new CombinacaoEntry(predicado: CombinacaoFlush.&temCombinacao, classe: CombinacaoFlush),
+		new CombinacaoEntry(predicado: CombinacaoSequencia.&temCombinacao, classe: CombinacaoSequencia),
+		new CombinacaoEntry(predicado: CombinacaoTrinca.&temCombinacao, classe: CombinacaoTrinca),
+		new CombinacaoEntry(predicado: CombinacaoDoisPares.&temCombinacao, classe: CombinacaoDoisPares),
+		new CombinacaoEntry(predicado: CombinacaoPar.&temCombinacao, classe: CombinacaoPar),
 	]
 
 	static Combinacao calcularMelhorJogada(PokerHand mao) {
-		return COMBINACOES_POSSIVEIS.find {
-			Closure<Boolean> predicado = it.get1()
-			return predicado(mao)
-		}?.get2()?.newInstance(mao) ?: new CombinacaoMaiorCarta(mao)
+		return (COMBINACOES_POSSIVEIS.find { it.predicado(mao) }?.classe?.newInstance(mao)) ?: (new CombinacaoMaiorCarta(mao))
 	}
+
+	private static class CombinacaoEntry {
+		Closure<Boolean> predicado
+		Class<Combinacao> classe
+	}
+
 }

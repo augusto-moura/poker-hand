@@ -1,6 +1,7 @@
 package zg.augusto.combinacoes
 
 import spock.lang.Specification
+import spock.lang.Unroll
 import zg.augusto.dominio.PokerHand
 
 class CombinacaoMaiorCartaSpec extends Specification {
@@ -25,13 +26,14 @@ class CombinacaoMaiorCartaSpec extends Specification {
 		"2D 6D QD KD 5D" || true
 	}
 
+	@Unroll
 	def "Quando comparado com outra combinação do tipo MaiorCarta, deve ser avaliada a maior carta das mãos"() {
 		given:
 		final PokerHand maoFoo = new PokerHand(strMaoFoo)
-		final Combinacao combinacaoFoo = new CombinacaoFlush(maoFoo)
+		final Combinacao combinacaoFoo = new CombinacaoMaiorCarta(maoFoo)
 
 		final PokerHand maoBar = new PokerHand(strMaoBar)
-		final Combinacao combinacaoBar = new CombinacaoFlush(maoBar)
+		final Combinacao combinacaoBar = new CombinacaoMaiorCarta(maoBar)
 
 		expect:
 		combinacaoFoo.compararCom(combinacaoBar) == result

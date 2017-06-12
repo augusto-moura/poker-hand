@@ -4,7 +4,7 @@ import zg.augusto.classificacoes.MesmoNaipe
 import zg.augusto.dominio.Carta
 import zg.augusto.dominio.PokerHand
 
-class CombinacaoFlush extends Combinacao<CombinacaoFlush> {
+class CombinacaoFlush extends Combinacao {
 
 	CombinacaoFlush(PokerHand mao) {
 		super(mao, PossibilidadeCombinacoes.FLUSH)
@@ -14,7 +14,6 @@ class CombinacaoFlush extends Combinacao<CombinacaoFlush> {
 		return mao.grupos.any { it instanceof MesmoNaipe && it.cartas.size() == QUANTIDADE_MAXIMA_CARTAS_NA_MAO }
 	}
 
-	@Override
 	int compararCom(CombinacaoFlush alvo) {
 		return [
 			mao.cartas.sort(false).reverse(),
