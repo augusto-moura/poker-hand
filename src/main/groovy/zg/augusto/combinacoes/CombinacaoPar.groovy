@@ -34,24 +34,5 @@ class CombinacaoPar extends Combinacao<CombinacaoPar> {
 			return cartaAtual <=> cartaAlvo
 		}.find { it != 0 } ?: 0
 	}
-//
-//	int compararCom(CombinacaoPar alvo) {
-//		MesmoValor parAtual = mao.grupos.find { it instanceof MesmoValor } as MesmoValor
-//		MesmoValor parAlvo = alvo.mao.grupos.find { it instanceof MesmoValor } as MesmoValor
-//
-//		int comparacaoPares = parAtual.valor <=> parAlvo.valor
-//		if (comparacaoPares != 0) {
-//			return comparacaoPares
-//		}
-//
-//
-//		return [
-//			(mao.cartas - parAtual.cartas).sort(false).reverse(),
-//			(alvo.mao.cartas - parAlvo.cartas).sort(false).reverse(),
-//		].transpose().collect { parAtualAlvo ->
-//			def (Carta cartaAtual, Carta cartaAlvo) = parAtualAlvo
-//			return cartaAtual <=> cartaAlvo
-//		}.find { it != 0 } ?: 0
-//	}
 
 }

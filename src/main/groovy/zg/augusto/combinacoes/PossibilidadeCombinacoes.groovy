@@ -2,6 +2,7 @@ package zg.augusto.combinacoes
 
 enum PossibilidadeCombinacoes {
 
+	MAIOR_CARTA,
 	PAR,
 	DOIS_PARES,
 	TRINCA,
