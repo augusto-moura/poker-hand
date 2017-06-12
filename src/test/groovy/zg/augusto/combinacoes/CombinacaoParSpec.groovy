@@ -4,6 +4,7 @@ import spock.lang.Specification
 import spock.lang.Unroll
 import zg.augusto.dominio.PokerHand
 
+@SuppressWarnings("GroovyPointlessBoolean")
 class CombinacaoParSpec extends Specification {
 
 	@Unroll

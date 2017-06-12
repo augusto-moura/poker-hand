@@ -3,6 +3,7 @@ package zg.augusto.combinacoes
 import spock.lang.Specification
 import zg.augusto.dominio.PokerHand
 
+@SuppressWarnings("GroovyPointlessBoolean")
 class CombinacaoFullHouseSpec extends Specification {
 
 	def "Dever considerar como uma combinação válida mãos com uma dupla e uma trinca"() {

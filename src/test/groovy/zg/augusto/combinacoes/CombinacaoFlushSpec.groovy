@@ -3,6 +3,7 @@ package zg.augusto.combinacoes
 import spock.lang.Specification
 import zg.augusto.dominio.PokerHand
 
+@SuppressWarnings("GroovyPointlessBoolean")
 class CombinacaoFlushSpec extends Specification {
 
 	def "Deve considerar cartas que tenham combinacao do tipo flush"() {
