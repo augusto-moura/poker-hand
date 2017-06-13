@@ -61,7 +61,7 @@ class CombinacaoDoisParesSpec extends Specification {
 		"AH AD JC JD 7H" | "AC AS QS QD KD" || -1
 	}
 
-	def "Quando comparado com uma combinacao de dois pares, com as mesmas cartas nos dois pares avaliar pela carta sobrando(kicker)"() {
+	def "Quando comparado com uma combinacao de dois pares, com as mesmas cartas nos dois pares avaliar pela carta sobrando"() {
 		given:
 		final PokerHand maoFoo = new PokerHand(strMaoFoo)
 		final Combinacao combinacaoFoo = new CombinacaoDoisPares(maoFoo)
