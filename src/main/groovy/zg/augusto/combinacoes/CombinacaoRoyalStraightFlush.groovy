@@ -14,7 +14,7 @@ class CombinacaoRoyalStraightFlush extends Combinacao {
 	}
 
 	int compararCom(CombinacaoRoyalStraightFlush o) {
-		return o.mao.maiorCarta.naipe <=> mao.maiorCarta.naipe
+		return mao.maiorCarta <=> o.mao.maiorCarta
 	}
 
 }

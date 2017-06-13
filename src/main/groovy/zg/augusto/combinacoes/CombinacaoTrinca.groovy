@@ -1,6 +1,7 @@
 package zg.augusto.combinacoes
 
 import zg.augusto.classificacoes.MesmoValor
+import zg.augusto.dominio.Carta
 import zg.augusto.dominio.PokerHand
 
 class CombinacaoTrinca extends Combinacao {
@@ -22,7 +23,18 @@ class CombinacaoTrinca extends Combinacao {
 			return it instanceof MesmoValor && it.cartas.size() == QUANTIDADE_CARTAS_TRINCA
 		} as MesmoValor
 
-		return trincaAtual.valor <=> trincaAlvo.valor
+		int comparacaoTrinca = trincaAtual.valor <=> trincaAlvo.valor
+		if (comparacaoTrinca != 0) {
+			return comparacaoTrinca
+		}
+
+		return [
+			(mao.cartas - trincaAtual.cartas).sort(false).reverse(),
+			(alvo.mao.cartas - trincaAlvo.cartas).sort(false).reverse(),
+		].transpose().collect { parAtualAlvo ->
+			def (Carta cartaAtual, Carta cartaAlvo) = parAtualAlvo
+			return cartaAtual <=> cartaAlvo
+		}.find { it != 0 } ?: 0
 	}
 
 }

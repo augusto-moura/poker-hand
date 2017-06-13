@@ -14,7 +14,7 @@ class CombinacaoSequencia extends Combinacao {
 	}
 
 	int compararCom(CombinacaoSequencia o) {
-		return o.mao.maiorCarta.naipe <=> mao.maiorCarta.naipe
+		return mao.maiorCarta <=> o.mao.maiorCarta
 	}
 
 }

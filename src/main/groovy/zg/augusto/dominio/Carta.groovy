@@ -26,4 +26,9 @@ class Carta implements Comparable<Carta> {
 		int valorCarta = this.valor <=> o.valor;
 		return valorCarta == 0 ? (this.naipe <=> o.naipe) : valorCarta
 	}
+
+	@Override
+	String toString() {
+		return "$valor.codigo$naipe.codigo"
+	}
 }
