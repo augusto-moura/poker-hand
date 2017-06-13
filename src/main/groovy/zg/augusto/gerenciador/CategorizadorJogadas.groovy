@@ -18,7 +18,9 @@ class CategorizadorJogadas {
 	]
 
 	static Combinacao calcularMelhorJogada(PokerHand mao) {
-		return (COMBINACOES_POSSIVEIS.find { it.temCombinacao(mao) })?.newInstance(mao) ?: (new CombinacaoMaiorCarta(mao))
+		return COMBINACOES_POSSIVEIS.find {
+			return it.temCombinacao(mao)
+		}?.newInstance(mao) ?: new CombinacaoMaiorCarta(mao)
 	}
 
 }
