@@ -23,7 +23,7 @@ class Carta implements Comparable<Carta> {
 
 	@Override
 	int compareTo(Carta o) {
-		int valorCarta = this.valor <=> o.valor;
+		int valorCarta = this.valor <=> o.valor
 		return valorCarta == 0 ? (this.naipe <=> o.naipe) : valorCarta
 	}
 
